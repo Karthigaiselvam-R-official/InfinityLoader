@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity v2</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/style.css?v=28">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Dynamic Aurora Background -->
+    <div class="aurora-bg">
+        <div class="aurora-blob blob-1"></div>
+        <div class="aurora-blob blob-2"></div>
+        <div class="aurora-blob blob-3"></div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <main class="main-dashboard">
+
+        <!-- Header Section -->
+        <header>
+            <div class="logo-container">
+                <i class="fa-brands fa-youtube logo-icon"></i>
+                <div class="logo-text">Infinity<span>Loader</span></div>
+            </div>
+        </header>
+
+        <!-- Search / Hero Section -->
+        <div class="search-container">
+            <div class="input-group">
+                <button class="action-btn" title="Paste Link" onclick="handlePaste()">
+                    <i class="fa-solid fa-bolt"></i>
+                </button>
+                <input type="text" id="urlInput" class="search-input" placeholder="Paste YouTube Link or Search..."
+                    autocomplete="off">
+                <button class="action-btn folder-btn" id="folderBtn" title="Change Save Location (Optional)"
+                    onclick="choosePath()">
+                    <i class="fa-regular fa-folder-open"></i>
+                </button>
+                <div id="scanLine" class="scan-line"></div>
+            </div>
+        </div>
+
+        <!-- Feature Showcase Box (Unified) -->
+        <div class="showcase-box" id="showcaseBox">
+            <!-- Description -->
+            <div class="app-description" id="appDesc">
+                <h3>Unlock the Full Power of YouTube</h3>
+                <p>
+                    Download <b>8K HDR</b>, <b>320kbps Audio</b>, and <b>Shorts</b> instantly. <br>
+                    Ad-free. Secure. Blazing Fast.
+                </p>
+            </div>
+
+            <!-- Features Row -->
+            <div class="features-grid" id="featuresGrid">
+
+                <!-- NEW CLASS: feature-pill explicitly used here -->
+                <div class="feature-pill">
+                    <div class="feat-icon-box" style="background: rgba(255, 0, 0, 0.2);">
+                        <i class="fa-brands fa-youtube" style="color: #ff0000;"></i>
+                    </div>
+                    <span>Video</span>
+                </div>
+
+                <div class="feature-pill">
+                    <div class="feat-icon-box" style="background: rgba(255, 0, 0, 0.2);">
+                        <i class="fa-solid fa-circle-play" style="color: #ff0000;"></i>
+                    </div>
+                    <span>Music</span>
+                </div>
+
+                <div class="feature-pill">
+                    <div class="feat-icon-box" style="background: rgba(255, 0, 80, 0.2);">
+                        <i class="fa-solid fa-bolt" style="color: #ff0050;"></i>
+                    </div>
+                    <span>Shorts</span>
+                </div>
+
+                <div class="feature-pill">
+                    <div class="feat-icon-box" style="background: rgba(0, 242, 234, 0.2);">
+                        <i class="fa-solid fa-file-audio" style="color: #00f2ea;"></i>
+                    </div>
+                    <span>MP3</span>
+                </div>
+
+                <div class="feature-pill">
+                    <div class="feat-icon-box" style="background: rgba(0, 168, 255, 0.2);">
+                        <i class="fa-solid fa-file-video" style="color: #00a8ff;"></i>
+                    </div>
+                    <span>MP4</span>
+                </div>
+
+                <div class="feature-pill">
+                    <div class="feat-icon-box" style="background: rgba(255, 215, 0, 0.2);">
+                        <i class="fa-solid fa-film" style="color: #ffd700;"></i>
+                    </div>
+                    <span>Movies</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div id="contentArea" class="content-area hidden">
+            <!-- Video Hero Banner -->
+            <div class="video-hero">
+                <div id="heroMedia" class="hero-media">
+                    <img id="thumbImg" src="" alt="Thumbnail" class="hero-thumb">
+                </div>
+                <div class="hero-details">
+                    <h2 id="videoTitle" class="hero-title">Video Title Loading...</h2>
+                    <div class="hero-meta">
+                        <span id="videoAuthor"><i class="fa-solid fa-user"></i> Channel</span>
+                        <span id="videoDuration"><i class="fa-regular fa-clock"></i> 00:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Format Tabs -->
+            <div class="tabs-container">
+                <button class="tab-btn active" id="tabVideo" onclick="switchTab('video')">
+                    <i class="fa-solid fa-video tab-icon"></i> Video
+                </button>
+                <button class="tab-btn" id="tabAudio" onclick="switchTab('audio')">
+                    <i class="fa-solid fa-music tab-icon"></i> Audio
+                </button>
+            </div>
+
+            <!-- Formats Grid -->
+            <div id="formatsGrid" class="formats-grid">
+                <!-- Cards Injected Here via JS -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Interactive Status Dock -->
+    <div id="statusDock" class="status-dock">
+        <i id="dockIcon" class="fa-solid fa-circle-notch dock-icon"></i>
+        <div class="dock-info">
+            <div class="dock-title" id="statusText">Starting Download...</div>
+            <div class="dock-bar-bg">
+                <div id="progressFill" class="dock-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 InfinityLoader. Crafted with passion by <span class="author-name">Karthigaiselvam R</span></p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
