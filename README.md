@@ -4,7 +4,7 @@
 
 > **The Ultimate YouTube Experience. Reimagined.**
 
-![InfinityLoader Showcase](public/ui-showcase.png)
+![InfinityLoader Showcase](public/image.png)
 
 InfinityLoader v2 is not just a downloader; it is an **Artistic Statement**. Built with a focus on "Expert Level" UI/UX, it combines raw power with a breathtaking **Aurora Glass Interface**.
 
