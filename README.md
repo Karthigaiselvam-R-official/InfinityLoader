@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌌 InfinityLoader v2
+# 🌌 Infinity Loader
 
 ### *The Ultimate YouTube Experience. Reimagined.*
 
@@ -36,7 +36,7 @@
 
 ## 🌟 What is InfinityLoader?
 
-InfinityLoader v2 is not just a YouTube downloader — it's an **Artistic Statement**. We've crafted a tool that combines raw downloading power with a breathtaking **Aurora Glass Interface** that feels like it's from the future.
+InfinityLoader is not just a YouTube downloader — it's an **Artistic Statement**. We've crafted a tool that combines raw downloading power with a breathtaking **Aurora Glass Interface** that feels like it's from the future.
 
 > *"We didn't just build a downloader. We built an experience."*
 
@@ -291,16 +291,28 @@ InfinityLoader/
 
 ## 🎯 Roadmap
 
+### ✅ Completed
 - [x] 8K HDR Video Support
 - [x] 320kbps Audio Extraction
 - [x] Aurora Glass UI
 - [x] Animated Footer
 - [x] Format Selection Grid
+
+### 🚧 In Progress
 - [ ] Playlist Download Support
 - [ ] Download Queue Manager
 - [ ] Dark/Light Theme Toggle
 - [ ] Browser Extension
 - [ ] Mobile Responsive Design
+
+### 🔮 Future Enhancements
+- [ ] **Instagram** — Reels, Stories, and Posts download
+- [ ] **Pinterest** — Pin videos and images
+- [ ] **X (Twitter)** — Tweet videos and GIFs
+- [ ] **Facebook** — Video and Reels download
+- [ ] **TikTok** — Short videos without watermark
+- [ ] **Vimeo** — High-quality video support
+- [ ] **SoundCloud** — Audio track downloads
 
 <br/>
 
